@@ -1,0 +1,11 @@
+table {
+    width: 50%;
+    height: 150px;
+    font-family: 'Patua One', cursive;
+    border-collapse: collapse;
+}
+td, th {
+    border: 2px solid black;
+    text-align: center;
+    padding: 8px;
+}
