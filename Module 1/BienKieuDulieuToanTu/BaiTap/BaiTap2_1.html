@@ -26,7 +26,6 @@
     let toCurrency = document.getElementById("toCurrency");
     let result = 0;
 
-    // document.getElementById("result").innerHTML = "The result is " + amount + " USD";
     function tien() {
         if (fromCurrency.value == "VnDong" && toCurrency.value == "USD") {
             result = amount.value / 23000;
@@ -36,7 +35,9 @@
             result = amount.value * 23000;
             document.getElementById("result1").innerHTML = "The result is " + result + " VnDong";
         } else {
-            result = "Please check type money again!"
+            result = "Please check type money again!";
+            document.getElementById("result1").innerHTML =  result ;
+
         }
     }
     </script>
