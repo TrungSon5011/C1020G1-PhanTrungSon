@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form >
+<label>Amount</label><label style="margin-left: 250px">From currency</label><label style="margin-left: 200px">To currency</label>
+<br><br>
+<input id="money" type="text" name="amount"/>
+<select id="fromCurrency" style="margin-left: 150px">
+    <option>VnDong</option>
+    <option>USD</option>
+</select>
+<select id="toCurrency" style="margin-left: 230px">
+    <option>USD</option>
+    <option>VnDong</option>
+</select>
+<button  style="margin-left: 50px; background: dodgerblue ; "  type="button" onclick="tien()">Convert</button>
+</form>
+<p id="result1"></p>
+<script>
+    let amount = document.getElementById("money");
+    let fromCurrency = document.getElementById("fromCurrency");
+    let toCurrency = document.getElementById("toCurrency");
+    let result = 0;
+
+    // document.getElementById("result").innerHTML = "The result is " + amount + " USD";
+    function tien() {
+        if (fromCurrency.value == "VnDong" && toCurrency.value == "USD") {
+            result = amount.value / 23000;
+            document.getElementById("result1").innerHTML = "The result is " + result + " VnDong";
+
+        } else if (fromCurrency.value == "USD" && toCurrency.value == "VnDong") {
+            result = amount.value * 23000;
+            document.getElementById("result1").innerHTML = "The result is " + result + " VnDong";
+        } else {
+            result = "Please check type money again!"
+        }
+    }
+    </script>
+</body>
+</html>
