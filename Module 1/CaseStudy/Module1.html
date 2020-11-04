@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Furama Resort</title>
+</head>
+<style>
+    table{
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 70%;
+    }
+    td, th {
+        border: 0px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+</style>
+<body>
+<table>
+    <h2></h2>
+    <br>
+    <tr>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+    <td>Name: </td>
+    <td><input style="width: 400px" type = "text" name ="name" /></td>
+    </tr>
+   <tr>
+    <td>ID number: </td>
+    <td><input style="width: 400px" type="number" name="id"/></td>
+   </tr>
+    <tr>
+    <td>Birthday: </td>
+    <td><input style="width: 400px" type="date" name="birthday"/></td>
+    </tr>
+    <tr>
+    <td>Email:</td>
+    <td><input style="width: 400px" type="email" name="email"/></td>
+    </tr>
+    <tr>
+    <td>Address:</td>
+    <td><textarea style="width: 400px" ></textarea></td>
+    </tr>
+    <tr>
+    <td>Type Customer:</td>
+        <td>
+            <input type="radio" name="customer"/>Diamond
+            <input type="radio" name="customer"/>Platinum
+            <input type="radio" name="customer"/>Gold
+            <input type="radio" name="customer"/>Silver
+            <input type="radio" name="customer"/>Member
+        </td>
+    </tr>
+    <tr>
+    <td>Discount:</td>
+    <td><input style="width: 400px" type="number" name="discount"/><label>%</label></td>
+    </tr>
+    <tr>
+    <td>The amount of person:</td>
+    <td><input style="width: 400px" type="number" name="person"/></td>
+    </tr>
+    <tr>
+    <td>Rent Days:</td>
+    <td><input style="width: 400px" type="number" name="day" /></td>
+    </tr>
+    <tr>
+    <td>Type Service:<labe style="color: #d61b06">*</labe></td>
+    <td><select>
+        <option>Vip</option>
+        <option>Besinuss</option>
+        <option>Normal</option>
+    </select></td>
+    </tr>
+    <tr>
+    <td>Type Room</td>
+    <td><select>
+        <option>Villa</option>
+        <option>House</option>
+        <option>Room</option>
+    </select></td>
+    </tr>
+    <tr>
+     <td><button style="color: dodgerblue" type="button" onlick="book">Book Now</button></td>
+        <td><input type="reset" name="reset" value="reset"/></td>
+    </tr>
+
+    <tr>
+    <td></td>
+    </tr>
+    <tr>
+    <td><labe style="color: #d61b06">*</labe>Price: </td>
+    </tr>
+   <tr>
+    <td>Villa $500/day</td>
+   </tr>
+    <tr>
+    <td>House $500/day</td>
+    </tr>
+    <tr>
+    <td>Room $100/day</td>
+    </tr>
+</table>
+<br>
+
+</body>
+</html>

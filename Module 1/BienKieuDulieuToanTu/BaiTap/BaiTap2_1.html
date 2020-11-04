@@ -29,11 +29,11 @@
     function tien() {
         if (fromCurrency.value == "VnDong" && toCurrency.value == "USD") {
             result = amount.value / 23000;
-            document.getElementById("result1").innerHTML = "The result is " + result + " VnDong";
+            document.getElementById("result1").innerHTML = "The result is " + result + " USD";
 
         } else if (fromCurrency.value == "USD" && toCurrency.value == "VnDong") {
             result = amount.value * 23000;
-            document.getElementById("result1").innerHTML = "The result is " + result + " VnDong";
+            document.getElementById("result1").innerHTML = "The result is " + result + " VND";
         } else {
             result = "Please check type money again!";
             document.getElementById("result1").innerHTML =  result ;
