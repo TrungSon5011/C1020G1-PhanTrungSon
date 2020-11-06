@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practice</title>
+</head>
+<body>
+<script>
+    let sign = prompt("Who's there?"," ");
+    if( sign == "admin"){
+        let passWord = prompt("Enter the password: "," ");
+        if( passWord == "TheMaster"){
+            alert("Welcome");
+        }
+        else if(passWord == "null"){
+            alert("canceled");
+        }
+        else{
+            alert("Wrong password");
+        }
+    }
+    else{
+        alert("I dont know you");
+    }
+</script>
+</body>
+</html>

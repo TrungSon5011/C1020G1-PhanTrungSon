@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let firstInt = parseInt(prompt("Enter a number: "));
+    let secondInt = parseInt(prompt("Enter a number: "));
+    let thirdInt = parseInt(prompt("Enter a number: "));
+    let max = 0;
+    if(firstInt > secondInt){
+        if(firstInt > thirdInt){
+            max = firstInt;
+        }
+        else{
+            max = thirdInt;
+        }
+    }
+    else{
+        if(secondInt > thirdInt){
+            max = secondInt;
+        }
+        else{
+            max = thirdInt;
+        }
+    }
+    alert(max);
+</script>
+</body>
+</html>

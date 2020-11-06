@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table id="table">
+    <tr>
+        <td>Name</td>
+        <td><input type="text" value="Phan Trung Son" id="name"/></td>
+    </tr>
+    <tr>
+        <td>ID number Customer:</td>
+        <td><input type="number" value="12324425345" /></td>
+    </tr>
+    <tr>
+        <td>Birthday( dd/mm/yyyy)</td>
+        <td>21/12/1993</td>
+    </tr>
+    <tr>
+        <td>Email:</td>
+        <td><input type="email" value="chomwi@gmail.com"/></td>
+    </tr>
+    <tr>
+        <td>Address:</td>
+        <td>Nguyen tat thanh, Hai Chau, Da Nang</td>
+    </tr>
+    <tr>
+        <td>Type of Customer:</td>
+        <td>Gold</td>
+    </tr>
+    <tr>
+        <td>Discount:</td>
+        <td>25</td>
+    </tr>
+    <tr>
+        <td>Amount of person:</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Rent Days:</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>Type of Service</td>
+        <td>Villa</td>
+    </tr>
+    <tr>
+        <td>Type Room</td>
+        <td>Vip</td>
+    </tr>
+    <tr>
+    </tr>
+</table>
+<th><button type="button" onclick="edit()">Edit</button></th>
+
+</body>
+</html>
+<script>
+    function edit() {
+        document.getElementById("table").innerHTML= "<tr>\n" +
+            "        <td>Name</td>\n" +
+            "        <td><input type=\"text\" value=\"Phan Trung Son\" id=\"name\"/></td>\n" +
+            "    </tr>\n" +
+            "    <tr>\n" +
+            "        <td>ID number Customer:</td>\n" +
+            "        <td><input type=\"number\" value=\"12324425345\" /></td>\n" +
+            "    </tr>\n" +
+            "    <tr>\n" +
+            "        <td>Birthday( dd/mm/yyyy)</td>\n" +
+            "        <td><input type='date' /> </td>\n" +
+            "    </tr>\n" +
+            "    <tr>\n" +
+            "        <td>Email:</td>\n" +
+            "        <td><input type=\"email\" value=\"chomwi@gmail.com\"/></td>\n" +
+            "    </tr>\n" +
+            "    <tr>\n" +
+            "        <td>Address:</td>\n" +
+            "        <td><input type='text' value='Nguyen tat thanh, Hai Chau, Da Nang'/></td>\n" +
+            "    </tr>\n" +
+            "    <tr>\n" +
+            "        <td>Type of Customer:</td>\n" +
+            "        <td><select>\n" +
+            "            <option>Diamond</option>\n" +
+            "            <option>Platinum</option>\n" +
+            "            <option>Gold</option>\n" +
+            "            <option>Silver</option>\n" +
+            "            <option>Member</option>\n" +
+            "        </select></td>\n" +
+            "    </tr>\n" +
+            "    <tr>\n" +
+            "        <td>Discount:</td>\n" +
+            "        <td><input type='number' value='25'</td>\n" +
+            "    </tr>\n" +
+            "    <tr>\n" +
+            "        <td>Amount of person:</td>\n" +
+            "        <td><input type='number' value='1'/></td>\n" +
+            "    </tr>\n" +
+            "    <tr>\n" +
+            "        <td>Rent Days:</td>\n" +
+            "        <td><input type='number' value='3'/></td>\n" +
+            "    </tr>\n" +
+            "    <tr>\n" +
+            "        <td>Type of Service</td>\n" +
+            "        <td><select>\n" +
+            "        <option>Villa</option>\n" +
+            "        <option>House</option>\n" +
+            "        <option>Room</option>\n" +
+            "    </select></td>\n" +
+            "    </tr>\n" +
+            "    <tr>\n" +
+            "        <td>Type Room</td>\n" +
+            "        <td><select>\n" +
+            "        <option>Vip</option>\n" +
+            "        <option>Besinuss</option>\n" +
+            "        <option>Normal</option>\n" +
+            "    </select></td>\n" +
+            "    </tr>"
+    }
+</script>

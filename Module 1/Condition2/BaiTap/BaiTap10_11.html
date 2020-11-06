@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let personTax = 0;
+    let income = parseInt(prompt('"Enter your income: '));
+    if(income > 1000000){
+        personTax = income*35/100;
+    }
+    else if(income > 500000){
+        personTax = income*25/100;
+    }
+    else if(income > 150000){
+        personTax = income*15/100;
+    }
+    else{
+        personTax = income*5/100;
+    }
+    alert("The tax you have to pay: "+personTax);
+</script>
+</body>
+</html>

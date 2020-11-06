@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let sideA = parseInt(prompt("Nhap canh a cua tam giac: "));
+    let sideB = parseInt(prompt("Nhap canh b cua tam giac: "));
+    let sideC = parseInt(prompt("Nhap canh c cua tam giac: "));
+    if( sideA > 0 && sideB > 0 && sideC > 0){
+        if(sideA + sideB > sideC && sideC + sideA > sideB && sideC + sideB > sideA){
+            alert("a, b, c la 3 canh cua tam giac");
+        }
+        else{
+            alert("a, b, c khong phai la 3 canh cua tam giac");
+        }
+    }
+    else{
+        alert("a, b, c khong phai la 3 canh cua tam giac");
+
+    }
+</script>
+</body>
+</html>

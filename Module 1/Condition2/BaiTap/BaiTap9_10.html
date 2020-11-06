@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let elecNum = parseInt(prompt("Nhap so dien thang nay:"));
+    let payMoney = 0;
+    if(elecNum >100){
+        payMoney = elecNum*3500;
+    }
+    else if( elecNum > 75){
+        payMoney = elecNum*3000;
+    }
+    else if( elecNum > 50){
+        payMoney = elecNum*2500;
+    }
+    else{
+        payMoney = elecNum*2000;
+    }
+    alert("Tien dien thang nay : "+payMoney);
+</script>
+</body>
+</html>

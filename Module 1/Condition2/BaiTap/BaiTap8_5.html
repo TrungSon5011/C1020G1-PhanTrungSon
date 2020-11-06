@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num1 = parseInt(prompt("Nhập điểm kiểm tra: "));
+    let num2 = parseInt(prompt("Nhập điểm giữa kỳ: "));
+    let num3 = parseInt(prompt("Nhập điểm cuối kỳ: "));
+    let result = (num1 + num2*2 + num3*5)/8;
+    if(result >= 80){
+        alert("Giỏi");
+    }
+    else if(result >= 70){
+        alert("Khá");
+    }
+    else if( result >= 50){
+        alert("Trung bình");
+    }
+    else {
+        alert("Yếu");
+    }
+</script>
+</body>
+</html>

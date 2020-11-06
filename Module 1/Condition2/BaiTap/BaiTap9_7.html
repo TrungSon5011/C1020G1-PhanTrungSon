@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // ax^2 + bx + c = 0;(a != 0)
+    let a = parseInt(prompt("Enter a number: "));
+    let b = parseInt(prompt("Enter b number: "));
+    let c = parseInt(prompt("Enter c number: "));
+    let delta = b*b - 4*a*c;
+    let d = Math.sqrt(delta);
+    alert(delta);
+    if(a != 0) {
+        if (delta < 0) {
+            document.write("Phuong trinh vo nghiem");
+        } else if (delta = 0) {
+            document.write("phuong trinh co nghiem kep: x1= x2= " + (-b / 2 * a));
+        } else {
+            document.writeln("Phuong trinh co 2 nghiem phan biet: <br>");
+            document.write("x1= " + (-b + d) / (2 * a) + "<br>");
+            document.write("x2= " + (-b - d) / (2 * a));
+        }
+    }
+    else{
+        let x = -c/b;
+        if(b == 0){
+            if(c == 0){
+                document.write("Phuong trinh vo so nghiem");
+            }
+            else{
+                document.write("Phuong trinh vo nghiem");
+            }
+        }
+        else{
+            document.write("x = "+x);
+        }
+    }
+</script>
+</body>
+</html>

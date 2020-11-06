@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Month:</p>
+<select id="month">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+</select>
+<br>
+<p>Tien lai 10%</p>
+<br>
+<p>Amount of money: </p>
+<input id="money1" type="number" name="money" />
+<input type="submit" onclick="money()" value="Submit"/>
+<p id="result"></p>
+
+<script>
+
+
+function money() {
+    let thang = parseInt(document.getElementById("month").value);
+    let money1 = parseInt(document.getElementById("money1").value);
+
+    let fee = 0.1;
+    let payMoney = money1*thang*fee;
+    switch(thang){
+        case 1 : payMoney = money1* thang*fee;
+            break;
+        case 2 : payMoney = (money1 + payMoney)*fee;
+             break;
+        case 3 : payMoney = (money1 + (money1 + payMoney)*fee)*fee;
+    }
+   document.getElementById("result").innerHTML = "Tien Lai: "+ payMoney;
+}
+
+</script>
+</body>
+</html>
