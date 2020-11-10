@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let fibRow = parseInt(prompt("Ban muon hien thi day fibonaccy gom bao nhieu so: "));
+    for(let i = 0; i < fibRow;i++){
+
+        let num = getFibonaccy(i);
+       document.writeln(num);
+    }
+    function getFibonaccy(n){
+        let fFrist = 0;
+        let fSecond = 1;
+        let fN = 1;
+        if(n == 0 || n == 1){
+            return n;
+        }
+        else{
+            for(let j = 2; j < n;j++){
+
+                fFrist = fSecond;
+                fSecond = fN;
+                fN = fFrist + fSecond;
+            }
+            return fN;
+        }
+
+    }
+</script>
+</body>
+</html>

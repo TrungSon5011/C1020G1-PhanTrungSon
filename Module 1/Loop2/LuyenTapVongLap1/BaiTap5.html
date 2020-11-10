@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let sum = 0;
+    for(let i = 0; i < 21;i++){
+        sum = sum + fibonaccyNum(i);
+    }
+    document.write(sum);
+
+    function fibonaccyNum(i) {
+        let fFirst = 0;
+        let fSecond =1;
+        let fN = 1;
+        if( i == 1 || i == 0){
+            return i ;
+        }
+        else{
+            for(let j = 2; j < i;j++){
+                fFirst = fSecond;
+                fSecond = fN;
+                fN = fFirst + fSecond;
+            }
+            return fN;
+        }
+    }
+</script>
+</body>
+</html>

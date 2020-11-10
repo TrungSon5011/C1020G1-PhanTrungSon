@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" onclick="batDau()" value="Start"/>
+<script>
+    function batDau(){
+        alert("Nhap gia tri nho nhat va lon nhat!");
+        let min = parseInt(prompt("Nhap gia tri nho nhat: "));
+        let max = parseInt(prompt("Nhap gia tri lon nhat: "));
+        var a = Math.floor(Math.random() * max) + min;
+        let inputNum = prompt("Doan 1 so trong khoang vua nhap; ");
+        while(inputNum != a) {
+            alert("Ban da doan sai!");
+            if(inputNum > a){
+                inputNum = prompt("Chon so nho hon so vua nhap; ");
+            }
+            if(inputNum < a){
+                inputNum = prompt("Chon so nho lon so vua nhap; ");
+            }
+        }
+        alert("You win");
+    }
+</script>
+</body>
+</html>

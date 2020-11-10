@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table id="table">
+    <tr>
+        <td>Name</td>
+        <td><input type="text" value="Phan Trung Son" id="name"/></td>
+    </tr>
+    <tr>
+        <td>ID number Customer:</td>
+        <td><input type="number" value="12324425345" /></td>
+    </tr>
+    <tr>
+        <td>Birthday( dd/mm/yyyy)</td>
+        <td>21/12/1993</td>
+    </tr>
+    <tr>
+        <td>Email:</td>
+        <td><input type="email" value="chomwi@gmail.com"/></td>
+    </tr>
+    <tr>
+        <td>Address:</td>
+        <td>Nguyen tat thanh, Hai Chau, Da Nang</td>
+    </tr>
+    <tr>
+        <td>Type of Customer:</td>
+        <td>Gold</td>
+    </tr>
+    <tr>
+        <td>Discount:</td>
+        <td>25</td>
+    </tr>
+    <tr>
+        <td>Amount of person:</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Rent Days:</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>Type of Service</td>
+        <td>Villa</td>
+    </tr>
+    <tr>
+        <td>Type Room</td>
+        <td>Vip</td>
+    </tr>
+    <tr>
+    </tr>
+</table>
+<th><button type="button" onclick="edit()">Edit</button></th>
+<!--<input type="submit" onclick="submit()"/>-->
+<button type="button" onclick="save()">Save</button>
+</body>
+</html>
+<script>
+    function edit() {
+        document.getElementById("table").innerHTML = "<tr>\n" +
+            "        <td>Name</td>\n" +
+            "        <td><input id=\"nameID\" type=\"text\" value=\"Phan Trung Son\" /></td>\n" +
+            "    </tr>\n" +
+            "    <tr>\n" +
+            "        <td>ID number Customer:</td>\n" +
+            "        <td><input id=\"idNumID\" type=\"number\" value=\"12324425345\" /></td>\n" +
+            "    </tr>\n" +
+            "    <tr>\n" +
+            "        <td>Birthday( dd/mm/yyyy)</td>\n" +
+            "        <td><input id=\"birthID\" type='date' /> </td>\n" +
+            "    </tr>\n" +
+            "    <tr>\n" +
+            "        <td>Email:</td>\n" +
+            "        <td><input id=\"emailID\" type=\"email\" value=\"chomwi@gmail.com\"/></td>\n" +
+            "    </tr>\n" +
+            "    <tr>\n" +
+            "        <td>Address:</td>\n" +
+            "        <td><input id=\"addressID\" type='text' value='Nguyen tat thanh, Hai Chau, Da Nang'/></td>\n" +
+            "    </tr>\n" +
+            "    <tr>\n" +
+            "        <td>Type of Customer:</td>\n" +
+            "        <td><select id=\"typeCustomerID\">\n" +
+            "            <option>Diamond</option>\n" +
+            "            <option>Platinum</option>\n" +
+            "            <option>Gold</option>\n" +
+            "            <option>Silver</option>\n" +
+            "            <option>Member</option>\n" +
+            "        </select></td>\n" +
+            "    </tr>\n" +
+            "    <tr>\n" +
+            "        <td>Discount:</td>\n" +
+            "        <td><input id=\"discount\" type='number' value='25'</td>\n" +
+            "    </tr>\n" +
+            "    <tr>\n" +
+            "        <td>Amount of person:</td>\n" +
+            "        <td><input id=\"amounPersonID\" type='number' value='1'/></td>\n" +
+            "    </tr>\n" +
+            "    <tr>\n" +
+            "        <td>Rent Days:</td>\n" +
+            "        <td><input id=\"days\" type='number' value='3'/></td>\n" +
+            "    </tr>\n" +
+            "    <tr>\n" +
+            "        <td>Type of Service</td>\n" +
+            "        <td><select id=\"typeService\">\n" +
+            "        <option>Villa</option>\n" +
+            "        <option>House</option>\n" +
+            "        <option>Room</option>\n" +
+            "    </select></td>\n" +
+            "    </tr>\n" +
+            "    <tr>\n" +
+            "        <td>Type Room</td>\n" +
+            "        <td><select id=\"typeRoomID\">\n" +
+            "        <option>Vip</option>\n" +
+            "        <option>Besinuss</option>\n" +
+            "        <option>Normal</option>\n" +
+            "    </select></td>\n" +
+            "    </tr>"
+    }
+        // let nameCus = document.getElementById("nameID");
+        // let idnum = document.getElementById("idNumID");
+        // let birthday = document.getElementById("birthID");
+        // let mail = document.getElementById("emailID");
+        // let addre = document.getElementById("addressID");
+        // let typeCustomer = document.getElementById("typeCustomerID");
+        // let discount = document.getElementById("discount");
+        // let amouPerson = document.getElementById("amounPersonID");
+        // let days = document.getElementById("days");
+        // let typeService = document.getElementById("typeService");
+        // let typeRoom = document.getElementById("typeRoomID");
+        function save(){
+            // alert(nameCus.value);
+            let nameCus = document.getElementById("nameID").value;
+            let idnum = document.getElementById("idNumID").value;
+            let birthday = document.getElementById("birthID").value;
+            let mail = document.getElementById("emailID").value;
+            let addre = document.getElementById("addressID").value;
+            let typeCustomer = document.getElementById("typeCustomerID").value;
+            let discount = document.getElementById("discount").value;
+            let amouPerson = document.getElementById("amounPersonID").value;
+            let days = document.getElementById("days").value;
+            let typeService = document.getElementById("typeService").value;
+            let typeRoom = document.getElementById("typeRoomID").value;
+            document.write("Name: "+nameCus+ "<br>");
+            document.write("ID number: "+ idnum+ "<br>");
+            document.write("Birthday: "+ birthday +"<br>");
+            document.write("Email: "+mail+"<br>");
+            document.write("Address: "+ addre +"<br>");
+            document.write("Type Customer: "+typeCustomer+"<br>");
+            document.write("Discount: "+discount+"<br>");
+            document.write("Amount of person: "+amouPerson+"<br>");
+            document.write("Rent Days: "+days+ "<br>");
+            document.write("Type of service: "+typeService+"<br>");
+            document.write("Type of room: "+typeRoom+"<br>");
+    }
+    // let nameCus = document.getElementById("nameID");
+    // let idnum = document.getElementById("idNumID");
+    // let birthday = document.getElementById("birthID");
+    // let mail = document.getElementById("emailID");
+    // let addre = document.getElementById("addressID");
+    // let typeCustomer = document.getElementById("typeCustomerID");
+    // let discount = document.getElementById("discount");
+    // let amouPerson = document.getElementById("amounPersonID");
+    // let days = document.getElementById("days");
+    // let typeService = document.getElementById("typeService");
+    // let typeRoom = document.getElementById("typeRoomID");
+    // function submit(){
+    //     document.write("Name: "+nameCus.value+ "<br>");
+    //     document.write("ID number: "+ idnum.value+ "<br>");
+    //     document.write("Birthday: "+ birthday.value +"<br>");
+    //     document.write("Email: "+mail.value+"<br>");
+    //     document.write("Address: "+ addre.value +"<br>");
+    //     document.write("Type Customer: "+typeService.value+"<br>");
+    //     document.write("Discount: "+discount.value+"<br>");
+    //     document.write("Amount of person: "+amouPerson.value+"<br>");
+    //     document.write("Rent Days: "+days.value+ "<br>");
+    //     document.write("Type of service: "+typeService.value+"<br>");
+    //     document.write("Type of room: "+typeRoom.value+"<br>");
+    // }
+</script>

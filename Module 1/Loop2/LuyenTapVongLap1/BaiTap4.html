@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+        let   fFrirst = 1;
+        let  fSecond = 1;
+        let  fN = 2;
+            for(let j = 2; j < 1000; j++){
+                fFrirst = fSecond;
+                fSecond = fN;
+                fN = fFrirst + fSecond;
+                if(fN % 5 == 0){
+                    document.write(fN);
+                    break;
+                }
+            }
+</script>
+</body>
+</html>

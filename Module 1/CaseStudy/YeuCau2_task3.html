@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Furama Resort</title>
+</head>
+<style>
+    table{
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 70%;
+    }
+    td, th {
+        border: 0px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+</style>
+<body>
+<table>
+    <h2></h2>
+    <br>
+    <tr>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+    <td>Name: </td>
+    <td><input id="nameID" style="width: 400px" type = "text" name ="nameinput" /></td>
+    </tr>
+   <tr>
+    <td>ID number: </td>
+    <td><input id="idNumID" style="width: 400px" type="number" name="id"/></td>
+   </tr>
+    <tr>
+    <td>Birthday: </td>
+    <td><input id="birthID" style="width: 400px" type="date" name="birthday"/></td>
+    </tr>
+    <tr>
+    <td>Email:</td>
+    <td><input id="emailID" style="width: 400px" type="email" name="email"/></td>
+    </tr>
+    <tr>
+    <td>Address:</td>
+    <td><textarea id="addressID" style="width: 400px" ></textarea></td>
+    </tr>
+    <tr>
+    <td>Type Customer:</td>
+        <td>
+        <select id="typeCustomerID">
+            <option>Diamond</option>
+            <option>Platinum</option>
+            <option>Gold</option>
+            <option>Silver</option>
+            <option>Member</option>
+        </select>
+        </td>
+    </tr>
+    <tr>
+    <td>Discount:</td>
+    <td><input id="discount" style="width: 400px" type="number" name="discount"/><label>%</label></td>
+    </tr>
+    <tr>
+    <td>The amount of person:</td>
+    <td><input id="amounPersonID" style="width: 400px" type="number" name="person"/></td>
+    </tr>
+    <tr>
+    <td>Rent Days:</td>
+    <td><input id="days" style="width: 400px" type="number" name="day" /></td>
+    </tr>
+    <tr>
+    <td>Type Service:<labe style="color: #d61b06">*</labe></td>
+    <td><select id="typeService">
+        <option>Villa</option>
+        <option>House</option>
+        <option>Room</option>
+    </select></td>
+    </tr>
+    <tr>
+    <td>Type Room</td>
+    <td><select id="typeRoomID">
+        <option>Vip</option>
+        <option>Besinuss</option>
+        <option>Normal</option>
+    </select></td>
+    </tr>
+    <tr>
+     <td><input  style="color: dodgerblue" type="button" onclick="bookIt()" value="BookNow"/></td>
+        <td><input type="reset" name="reset" value="reset"/></td>
+    </tr>
+
+    <tr>
+    <td></td>
+    </tr>
+    <tr>
+    <td><labe style="color: #d61b06">*</labe>Price: </td>
+    </tr>
+   <tr>
+    <td>Villa $500/day</td>
+   </tr>
+    <tr>
+    <td>House $300/day</td>
+    </tr>
+    <tr>
+    <td>Room $100/day</td>
+    </tr>
+</table>
+<br>
+<script>
+    let nameCus = document.getElementById("nameID");
+    let idnum = document.getElementById("idNumID");
+    let birthday = document.getElementById("birthID");
+    let mail = document.getElementById("emailID");
+    let addre = document.getElementById("addressID");
+    let typeCustomer = document.getElementById("typeCustomerID");
+    let discount = document.getElementById("discount");
+    let amouPerson = document.getElementById("amounPersonID");
+    let days = document.getElementById("days");
+    let typeService = document.getElementById("typeService");
+    let typeRoom = document.getElementById("typeRoomID");
+    let moneyService = 0;
+
+    function bookIt(){
+        document.write("Name: "+nameCus.value+ "<br>");
+        document.write("ID number: "+ idnum.value+ "<br>");
+        document.write("Birthday: "+ birthday.value +"<br>");
+        document.write("Email: "+mail.value+"<br>");
+        document.write("Address: "+ addre.value +"<br>");
+        document.write("Type Customer: "+typeCustomer.value+"<br>");
+        document.write("Discount: "+discount.value+"<br>");
+        document.write("Amount of person: "+amouPerson.value+"<br>");
+        document.write("Rent Days: "+days.value+ "<br>");
+        document.write("Type of service: "+typeService.value+"<br>");
+        document.write("Type of room: "+typeRoom.value+"<br>");
+
+
+        if(typeService.value == "Villa"){
+            moneyService = 500;
+        }
+        else if(typeService.value == "House"){
+            moneyService = 300;
+        }
+        else{
+            moneyService = 100;
+        }
+        let decreaAdd = 0;
+        if(addre.value == "Đà Nẵng"){
+            decreaAdd = 20;
+        }
+        else if(addre.value == "Huế"){
+            decreaAdd = 10;
+        }
+        else if(addre.value == "Quảng Nam"){
+            decreaAdd = 5;
+        }
+        let decreaTime = 0;
+        if(days.value > 7){
+            decreaTime =30;
+        }
+        else if(days.value >= 5){
+            decreaTime = 20;
+        }
+        else if(days.value >= 2){
+            decreaTime = 10;
+        }
+        let decreaCustomer = 0;
+        if(typeCustomer.value == "Diamond"){
+            decreaCustomer = 15;
+        }
+        else if(typeCustomer =="Platinum"){
+            decreaCustomer = 10;
+        }
+        else if(typeCustomer =="Gold"){
+            decreaCustomer = 5;
+        }
+        else if(typeCustomer == "Silver"){
+            decreaCustomer = 2;
+        }
+        else{
+            decreaCustomer = 0;
+        }
+        let decreaMoney = decreaAdd + decreaTime + decreaCustomer;
+        let moneyPay = moneyService*days.value - decreaMoney;
+        document.write("total money: "+moneyPay+"$");
+    }
+
+</script>
+
+</body>
+</html>

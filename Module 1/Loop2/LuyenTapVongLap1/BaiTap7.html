@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    for(let i = 1; i <= 100; i++){
+      let check = div3And5(i);
+      if( check == -1){
+          document.writeln("Fizz");
+      }
+      else if( check == 0){
+          document.writeln("Buzz");
+      }
+      else if ( check == 1 ){
+          document.writeln("FizzBuzz");
+      }
+      else{
+          document.writeln(i);
+      }
+
+    }
+    function div3And5(i){
+        if(i % 3 == 0 && i % 5 != 0 ){
+            return -1;
+        }
+        if(i % 5 == 0 && i % 3 != 0){
+            return 0
+        }
+        if( i % 3 == 0 && i % 5 == 0){
+            return 1;
+        }
+    }
+</script>
+</body>
+</html>

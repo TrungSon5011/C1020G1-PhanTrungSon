@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = parseInt(prompt("Enter a number: "));
+    // let test = checkPrime(number);
+    counts = 0;
+    // document.write(test);
+    for(let i = 2; i < 1000; i++){
+        let test = checkPrime(i);
+        if(test && counts < 5){
+            document.write(i+"<br>");
+            counts++;
+        }
+        if(counts == 5){
+            break;
+        }
+    }
+    function checkPrime(num){
+        let test = true;
+        if(num == 2) {
+            return test;
+        }
+        if(num > 2){
+            for(let j = 2; j < num; j++){
+                if(num % j == 0){
+                    test = false;
+                }
+            }
+            if(test == true){
+                return test
+            }
+        }
+    }
+</script>
+</body>
+</html>

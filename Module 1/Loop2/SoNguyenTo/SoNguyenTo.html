@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = parseInt(prompt("Enter a number: "));
+    let counts = 0;
+    let N = 2;
+    let test = true;
+    if(numbers == 1){
+        document.write("2");
+    }
+    if(numbers >= N){
+        document.write("2"+ "<br>");
+        counts++;
+    }
+    for(let i = 3; i<1000; i++){
+
+        for(let j =2;j < i; j++){
+            if(i % j == 0 ){
+                test = false;
+
+            }
+        }
+        if(test == true && counts < numbers ){
+            document.write(i +"<br>");
+            counts++;
+        }
+        if(counts == numbers){
+            break;
+        }
+        test = true;
+    }
+
+
+</script>
+</body>
+</html>
