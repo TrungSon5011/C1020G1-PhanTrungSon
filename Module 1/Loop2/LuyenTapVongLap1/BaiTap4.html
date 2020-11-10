@@ -10,15 +10,13 @@
         let   fFrirst = 1;
         let  fSecond = 1;
         let  fN = 2;
-            for(let j = 2; j < 1000; j++){
-                fFrirst = fSecond;
-                fSecond = fN;
-                fN = fFrirst + fSecond;
-                if(fN % 5 == 0){
-                    document.write(fN);
-                    break;
-                }
-            }
+        while( fN % 5 !== 0) {
+            fFrirst = fSecond;
+            fSecond = fN;
+            fN = fFrirst + fSecond;
+        }
+        document.write(fN);
+
 </script>
 </body>
 </html>
