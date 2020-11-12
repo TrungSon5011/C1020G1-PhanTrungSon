@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="inputNum" type="number" oninput="alertNum(this.value)"    />
+<p id="result"></p>
+<script>
+    function alertNum(num){
+        num = parseInt(num);
+       document.getElementById("result").innerHTML = num +1;
+    }
+</script>
+</body>
+</html>

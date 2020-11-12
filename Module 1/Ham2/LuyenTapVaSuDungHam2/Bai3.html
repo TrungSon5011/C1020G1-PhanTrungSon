@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function factorialCal(num) {
+        let result = 1;
+        for (let i = num; i > 0; i--) {
+            result *= i;
+        }
+        return result;
+    }
+    let numInput = prompt("Enter a number:");
+    let facResult = factorialCal(numInput);
+    alert(facResult);
+</script>
+</body>
+</html>

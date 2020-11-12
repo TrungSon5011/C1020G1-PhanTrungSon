@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function primeNumber(num) {
+        let test = false;
+        if(num > 1){
+            if(num == 2){
+                test = true;
+            }
+            else{
+                let i;
+                for( i = 2; i <  num; i++){
+                    if(num % i == 0){
+                        break;
+                    }
+                }
+                if(i ==  num){
+                    test = true;
+                }
+            }
+        }
+        return test;
+    }
+    let numInput = prompt("Enter a number: ");
+    let check = primeNumber(numInput);
+    if(check){
+        alert(numInput +" is a prime number");
+    }
+    else{
+        alert(numInput +" is NOT a prime number");
+    }
+</script>
+</body>
+</html>

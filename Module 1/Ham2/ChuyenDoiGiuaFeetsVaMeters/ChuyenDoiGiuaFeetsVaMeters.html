@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function  feetToMeter(footLength) {
+        let meter = footLength*0.305;
+        return meter;
+    }
+    function  meterToFeet(meterLength) {
+        let feet = 3.279*meterLength;
+        return feet;
+    }
+    let converType = prompt("1.Feet to meter. \n 2.Meter to feet");
+    if(converType == 1){
+        let feetInput = prompt("Enter a number: ");
+        let resultMeter = feetToMeter(feetInput);
+        alert(resultMeter)
+    }else{
+        let meterInput = prompt("Enter a number: ");
+        let resultFeet = meterToFeet(meterInput);
+        alert(resultFeet);
+    }
+</script>
+</body>
+</html>

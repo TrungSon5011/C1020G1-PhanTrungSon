@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function findMin(num1,num2,num3){
+        if(num1 < num2 && num1 < num3){
+            return num1;
+        }
+        if(num2 < num1 && num2 < num3){
+            return num2;
+        }
+        if(num3 < num2 && num3 < num1){
+            return num3;
+        }
+    }
+    let firstNum = prompt("Enter the first number:");
+    let secondNum = prompt("Enter the second number:");
+    let thirdNum = prompt("Enter the third number:");
+    let result = findMin(firstNum,secondNum,thirdNum);
+    alert(result);
+
+</script>
+</body>
+</html>

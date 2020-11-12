@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [];
+    for(let i = 0; i< 10;i++){
+        array[i] = prompt("Enter a number:");
+    }
+    array.sort(function (a,b) {
+        return a - b;
+    });
+    document.write(array);
+</script>
+</body>
+</html>

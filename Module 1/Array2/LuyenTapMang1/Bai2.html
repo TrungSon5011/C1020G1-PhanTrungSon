@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [1,45,323,21,1,43,23,45,2,4,5];
+    let max = array[0];
+    let index = 0
+    for(let i = 1; i < array.length;i++){
+        if(max < array[i]){
+            max = array[i];
+            index = i;
+        }
+    }
+    document.write(max+" is the max number and found at "+ index);
+</script>
+</body>
+</html>

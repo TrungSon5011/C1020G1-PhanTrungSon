@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [];
+    let num = prompt("Enter length of the array:");
+    for(let i = 0; i< num;i++){
+        array[i] = prompt("Enter a number:");
+    }
+    let vInt = parseInt(prompt("Enter a V number: "));
+
+    function checkArr(arr,num){
+        let test = false;
+        let index;
+        for(let i = 0; i < arr.length; i++){
+            if(vInt == arr[i]) {
+                test  = true;
+                index = i;
+            }
+        }
+        if(test){
+            for( let j = index;j < arr.length -1 ; j++ ){
+                arr[j] = arr[j+1];
+            }
+            arr[arr.length -1] = 0;
+            return arr;
+        }else{
+            alert("V is not in array");
+        }
+    }
+
+    document.write(checkArr(array,vInt));
+
+</script>
+</body>
+</html>

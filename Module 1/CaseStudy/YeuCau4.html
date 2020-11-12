@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+        let arrNameCustomers = [];
+        menu();
+    function menu(){
+        let menuList = prompt("1. Add name customer \n 2. Delete customer \n 3. Show information");
+        switch (menuList) {
+            case "1": addNameCus();
+
+            break;
+            case "2": delCus();
+            break;
+            case "3": showInfor();
+            break;
+            default:
+                alert("Try again");
+                menu();
+        }
+    }
+   function addNameCus(){
+        numCustomer = prompt("Enter number of customer:");
+        for(let i = 0; i < numCustomer;i++){
+            arrNameCustomers[i] = prompt("Enter name:")
+        }
+        showInfor();
+    }
+     function delCus(){
+        let text = "" ;
+
+         for(let i = 0; i< arrNameCustomers.length;i++){
+             text += (i+1) + " " +arrNameCustomers[i] +"  ";
+         }
+         let choose =prompt("Enter the number of customer you want to remove:\n"+text);
+         arrNameCustomers.splice(choose-1,1);
+         showInfor();
+    }
+    function showInfor() {
+        arrNameCustomers.sort();
+        alert(arrNameCustomers);
+        menu();
+    }
+</script>
+</body>
+</html>

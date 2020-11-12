@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function findStar(str){
+        array1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        array2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        let index = 0;
+        let test = false;
+        for(let i = 0; i < array1.length; i++){
+            if(str == array1[i]){
+                test = true;
+                return array2[i]
+            }
+        }
+        if(test == false){
+            return test;
+        }
+    }
+    let starInput = prompt("Nhap ten ngoi sao:");
+    let result = findStar(starInput);
+    if(result == false){
+        alert("Khong tim thay ngoi sao nao");
+    }else{
+        alert(result);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function findMin(arrayFunc){
+        let min = arrayFunc[0];
+        for(let i = 1; i < arrayFunc.length;i++){
+            if(min > arrayFunc[i] ){
+                min = arrayFunc[i];
+            }
+        }
+        return min;
+    }
+    let arr1 = [3, 5, 1, 8, -3, 7, 8];
+    let result = findMin(arr1);
+    alert("The minimum is "+result);
+
+</script>
+</body>
+</html>

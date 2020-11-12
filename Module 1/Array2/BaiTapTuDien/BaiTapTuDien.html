@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="englishWord"/>
+<button type="button" onclick="searchWord()">Search</button>
+<p id="result"></p>
+<script>
+    function searchWord(){
+        let englishArray = ["hello", "hi", " good morning", "fine"];
+        let vietArray = ["xin chao", "chao", "chao buoi sang", "on"];
+        let index = 0;
+        let word = document.getElementById("englishWord").value;
+        for(let i = 0; i< englishArray.length;i++){
+            if(word == englishArray[i]){
+                index = i;
+            }
+        }
+        document.getElementById("result").innerHTML = vietArray[index];
+    }
+</script>
+</body>
+</html>

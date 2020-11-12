@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkNum(num){
+        if(num * 0 == 0){
+            return true;
+        }else {
+            return false;
+        }
+    }
+    let inputCheck = prompt("Enter a something:");
+    let test = checkNum(inputCheck);
+    if(test){
+        document.write(inputCheck+" is a number");
+    }else{
+        document.write(inputCheck+" is Not a number");
+    }
+</script>
+</body>
+</html>

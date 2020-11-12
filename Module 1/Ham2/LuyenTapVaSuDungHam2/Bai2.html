@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function squareCircle(num){
+        let pi = Math.PI;
+        return num*num*pi;
+    }
+    function parameterCircle(num){
+        let pi = Math.PI;
+        return 2*num*pi;
+    }
+    let numInput = prompt("Nhap ban kinh hinh tron:");
+    let squareResult = squareCircle(numInput);
+    let paraResult = parameterCircle(numInput);
+    alert(squareResult+"la dien tich hinh tron");
+    alert(paraResult +"la chu vi hinh tron")
+</script>
+</body>
+</html>

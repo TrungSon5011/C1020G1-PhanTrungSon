@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPalindrome(str){
+        let last = str.length -1;
+        let first = 0;
+        let test = false;
+        while( first < last){
+            if(str[first] != str[last]){
+                test = false;
+                break;
+            }else{
+                test = true;
+            }
+            first++;
+            last--;
+        }
+        return test;
+    }
+    let strInput = prompt("Enter a word: ");
+    let check = isPalindrome(strInput);
+    if(check){
+        document.write(strInput+" is a palindrome");
+    }else{
+        document.write(strInput+" is NOT a palindrome");
+    }
+
+</script>
+</body>
+</html>
