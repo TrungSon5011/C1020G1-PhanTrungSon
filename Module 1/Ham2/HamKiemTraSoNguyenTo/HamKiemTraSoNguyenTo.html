@@ -7,23 +7,18 @@
 <body>
 <script>
     function primeNumber(num) {
-        let test = false;
-        if(num > 1){
-            if(num == 2){
-                test = true;
-            }
-            else{
-                let i;
-                for( i = 2; i <  num; i++){
+        let test = true;
+        if(num < 2) {
+            test = false;
+        }
+        else{
+            for( let i = 2; i <  num; i++){
                     if(num % i == 0){
+                        test = false;
                         break;
                     }
                 }
-                if(i ==  num){
-                    test = true;
-                }
             }
-        }
         return test;
     }
    for(let j = 0; j< 10000;j++){
