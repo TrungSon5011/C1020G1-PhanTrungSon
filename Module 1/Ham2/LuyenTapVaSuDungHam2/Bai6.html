@@ -6,16 +6,20 @@
 </head>
 <body>
 <script>
-    function checkPositiveNum(num){
-        if(num > 0){
-            return true;
+
+        function isInt(num)
+        {
+            if(parseInt(num)== num)
+            {
+                if(num > 0){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
         }
-        else{
-            return false;
-        }
-    }
     let numInput = prompt("Enter a number: ");
-    let result =(checkPositiveNum(numInput));
+    let result =(isInt(numInput));
     alert(result);
 </script>
 </body>

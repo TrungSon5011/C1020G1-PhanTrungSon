@@ -26,14 +26,11 @@
         }
         return test;
     }
-    let numInput = prompt("Enter a number: ");
-    let check = primeNumber(numInput);
-    if(check){
-        alert(numInput +" is a prime number");
-    }
-    else{
-        alert(numInput +" is NOT a prime number");
-    }
+   for(let j = 0; j< 10000;j++){
+       if(primeNumber(j)){
+           document.writeln(j);
+       }
+   }
 </script>
 </body>
 </html>

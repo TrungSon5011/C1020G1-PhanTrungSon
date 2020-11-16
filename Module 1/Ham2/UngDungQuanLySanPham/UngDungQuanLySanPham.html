@@ -6,28 +6,57 @@
 </head>
 <body>
 <h3>Add New Product</h3>
-<input type="text" id="newProduct" placeholder="New Product" />
-<button type="button" onclick="addProduct()" >Add</button>
+<input type="text" id="newProduct" placeholder="New Product"/>
+<button type="button" onclick="addProduct()" id="btn_register">Add</button>
+<button type="button" onclick="editProductName()" id="btn_update" hidden>Update</button>
+
 <h3>Display Product</h3>
 <h4>Product Name</h4>
 <table id="result"></table>
 <script>
     let arrProduct = [];
-    let sout = "<table border='1' width='300' cellspacing='0' cellpadding='3' >";
-    function displayProduct() {
-
-
-    }
-    function addProduct(){
-        sout = sout + "<tr>";
-        arrProduct.push(document.getElementById("newProduct").value);
-        sout = sout + "<td>" + arrProduct[arrProduct.length-1] +"</td>" +"<td><input type='button' value='Edit'/></td>"+"<td><input type='button' value='Delete'/></td>";
-        sout = sout +"</tr>";
+    let edit = document.getElementById("btn_update");
+    let add = document.getElementById("btn_register");
+    let inputNew = document.getElementById("newProduct");
+    function displayProduct(array) {
+        let sout = "<table border='1' width='300' cellspacing='0' cellpadding='3' >";
+        console.log(array);
+        document.getElementById("result").innerHTML = "";
+        for (let i = 0; i < array.length; i++) {
+            sout = sout + "<tr>";
+            sout = sout + "<td>" + array[i] + "</td>" +
+                "<td><input type='button' value='Edit' onclick='editIndex(" + i + ")'/></td>"
+                + "<td><input type='button' value='Delete' onclick='delProduct(" + i + ")'/></td>";
+            sout = sout + "</tr>";
+        }
         sout = sout + "</table>";
         document.getElementById("result").innerHTML = sout;
     }
-    function editNameProduct() {
+    function addProduct() {
+        arrProduct.push(document.getElementById("newProduct").value);
+        inputNew.value = "";
+        displayProduct(arrProduct);
+    }
+    let currIndex = -1;
+    function editIndex(index) {
+        console.log(index);
+        currIndex = index;
+        add.hidden = true;
+        edit.hidden = false;
+        inputNew.value = arrProduct[index];
+    }
 
+    function editProductName() {
+        arrProduct[currIndex] = document.getElementById("newProduct").value;
+        add.hidden = false;
+        edit.hidden = true;
+        console.log(arrProduct);
+        displayProduct(arrProduct);
+        inputNew.value = "";
+    }
+    function delProduct(index) {
+        arrProduct.splice(index,1);
+        displayProduct(arrProduct);
     }
 </script>
 </body>
