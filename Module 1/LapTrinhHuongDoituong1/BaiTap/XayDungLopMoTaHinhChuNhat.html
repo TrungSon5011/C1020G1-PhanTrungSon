@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1000px" height="500px" style="border: 1px solid #d3d3d3;"></canvas>
+
+<script>
+    // function Rectangle(height, width) {
+    //     this.height = height;
+    //     this.width = width;
+    //     this.getHeight = function () {
+    //         return height;
+    //     };
+    //     this.getWidth = function () {
+    //         return width;
+    //     };
+    //     this.getArea = function () {
+    //         return height*width;
+    //     };
+    //     this.getParameter = function () {
+    //         return (height + width)*2;
+    //     }
+    // }
+    // function createRectangle(hei,wid){
+    //     let ctx = document.getElementById("myCanvas").getContext("2d");
+    //     ctx.fillStyle = "#FF0000";
+    //     ctx.fillRect(0,0,hei,wid);
+    // }
+    //
+    // let rectangle = new Rectangle(500,250);
+    // let area = rectangle.getArea();
+    // let parameter = rectangle.getParameter();
+    // document.write("<br>")
+    // document.write("Area: "+area +"; parameter: "+parameter);
+    // createRectangle(rectangle.height,rectangle.width);
+    class Rectangle{
+        constructor(height, width) {
+            this.height = height;
+            this.width = width;
+        }
+        getArea(){
+            return this.height*this.width;
+        }
+        getParameter(){
+            return (this.height + this.width)*2;
+        }
+        createRectangle(){
+                let ctx = document.getElementById("myCanvas").getContext("2d");
+                ctx.fillStyle = "#FF0000";
+                ctx.fillRect(0,0,this.height,this.width);
+            }
+    }
+    let rectangle = new Rectangle(500,250);
+    rectangle.createRectangle();
+    document.write("Area: "+rectangle.getArea() +"; parameter: "+rectangle.getParameter());
+</script>
+</body>
+</html>

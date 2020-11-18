@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   class Mobile {
+       constructor(battery,name,status) {
+           this.battery = battery;
+           this.name = name;
+           this.typing = [];
+           this.sent = [];
+           this.received = [];
+           this.status = status;
+       }
+       onOffPhone(){
+           if(this.status == "on"){
+               this.status = "off";
+           }else{
+               this.status = "on";
+           }
+       }
+       chargePhone(){
+           while(this.battery <= 100){
+               this.battery++;
+           }
+       }
+       typeMessage(){
+           if(this.status == "on"){
+               let mess = prompt("Enter messenger:");
+               this.typing.push(mess);
+               this.sent.push(mess);
+               this.battery--;
+               return mess;
+           }
+       }
+       sendMessage(mess, mobile){
+           if(this.status == "on"){
+                mobile.received.push(mess);
+                this.battery--;
+           }
+       }
+       showSentMessage(){
+        if(this.status == "on"){
+            document.write("Sent message: "+this.sent+"<br>");
+            this.battery--;
+        }
+       }
+       showReceivedMessage(){
+           if(this.status == "on"){
+               document.write("Received message: "+this.received+"<br>");
+               this.battery--;
+           }
+       }
+   }
+   let nokia = new Mobile(100,"Nokia","on");
+   let iphone = new Mobile(100,"iphone","on");
+   iphone.sendMessage(iphone.typeMessage(),nokia);
+   iphone.showSentMessage();
+   nokia.showReceivedMessage();
+</script>
+</body>
+</html>
