@@ -1,4 +1,4 @@
-package C1020G1.Introduction.BaiTap;
+package bai1_introduction.BaiTap;
 
 import java.util.Scanner;
 
