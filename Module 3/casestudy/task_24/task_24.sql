@@ -20,7 +20,11 @@ if(id_dich_vu_update not in (select dich_vu.id_dich_vu from dich_vu)) then
 signal sqlstate '45000'
 set message_text  = 'invalid id_dich_vu';
 end if;
+insert into hop_dong 
+value
+(id_hop_dong_update,id_nhan_vien_update, id_khach_hang_update, id_dich_vu_update,ngay_lam_hop_dong_update,ngay_ket_thuc_update,
+tien_dat_coc_update,tong_tien_update);
 end ;
 // delimiter ;
 -- test 
-call insert_value(8, 7, 2, 5, '2019-11-11', '2019-12-01', 123123123, 123123123);
+call insert_value(8, 7, 2, 3, '2019-11-11', '2019-12-01', 123123123, 123123123);
