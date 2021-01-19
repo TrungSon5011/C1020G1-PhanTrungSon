@@ -1,0 +1,15 @@
+.vn{
+    font-weight: bold;
+    color: black;
+}
+
+span{
+    color: blue;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+p {
+    text-align: justify;
+    font-size: 20px;
+}
+
