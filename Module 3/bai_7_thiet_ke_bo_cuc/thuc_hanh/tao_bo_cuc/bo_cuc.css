@@ -1,0 +1,41 @@
+body{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#main{
+    width: 100%;
+}
+#head{
+    height: 100px;
+    background-color: #8EB3FD;
+    border: none;
+    margin-bottom: 0px;
+    margin-top: 0;
+}
+#head-link{
+    height: 20px;
+    background-color: #2f566d;
+}
+#left{
+    width: 200px;
+    height: 400px;
+    background-color: #8E8C8C;
+    float: left;
+}
+#content{
+    width: 500px;
+    height: 00px;
+    float: left;
+    background-color: red;
+}
+#right{
+    width: 300px;
+    height: 500px;
+    background-color: pink;
+    float: right;
+}
+#footer{
+    height: 50px;
+    clear: both;
+    border: 1px solid #CDCDCD;
+    background-color: #F8F8FF;
+}
