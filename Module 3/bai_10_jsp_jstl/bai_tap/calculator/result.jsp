@@ -12,30 +12,18 @@
     <title>Result</title>
 </head>
 <body>
-<%
-//    int check = (int) request.getAttribute("check");
-    int check = 0;
-    request.setAttribute("check",request.getAttribute("check"));
-%>
 <h2>Result:</h2>
-<c:set var="check" scope="session" value="${check}" ></c:set>
 <c:choose>
     <c:when test="${check == 1}">
         division by zero exception
     </c:when>
     <c:otherwise>
-        <span><%=request.getAttribute("firstNum")%>    </span>
-        <span><%=request.getAttribute("operator")%>    </span>
-        <span><%=request.getAttribute("secondNum")%>    </span>
+        <c:out value="${firstNum    }"></c:out>
+        <c:out value="${operator    }"></c:out>
+        <c:out value="${secondNum    }"></c:out>
         <span>=    </span>
-        <span><%=request.getAttribute("operator2Number")%>    </span>
+        <c:out value="${operator2Number}"></c:out>
     </c:otherwise>
 </c:choose>
-<span><%=request.getAttribute("check")%></span>
-<span><%=request.getAttribute("firstNum")%>    </span>
-<span><%=request.getAttribute("operator")%>    </span>
-<span><%=request.getAttribute("secondNum")%>    </span>
-<span>=    </span>
-<span><%=request.getAttribute("operator2Number")%>    </span>
 </body>
 </html>
