@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ConvertController {
-     ConvertService convertService = new ConvertServiceImpl() ;
+	@Autowired
+     ConvertService convertService  ;
     @GetMapping({"","/convert"})
     public String convertMoney(@RequestParam String number, Model model){
         Double result = convertService.convert(Double.parseDouble(number));

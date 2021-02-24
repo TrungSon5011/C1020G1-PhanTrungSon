@@ -9,9 +9,9 @@ public class Dictionary {
     public static HashMap<String,String> dictionaryMap =  dictionaryMap = new HashMap<>();
     static {
         dictionaryMap.put("hello","xin chao");
-        dictionaryMap.put("fuck","dam chet cha may gio");
-        dictionaryMap.put("heo","hoi troi di");
-        dictionaryMap.put("love","yeu");
+        dictionaryMap.put("hi","chao");
+        dictionaryMap.put("novel","tieu thuyet");
+        dictionaryMap.put("romantic","lang man");
 
     }
 
