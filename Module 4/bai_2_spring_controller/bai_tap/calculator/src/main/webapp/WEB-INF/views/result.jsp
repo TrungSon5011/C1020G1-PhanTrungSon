@@ -13,12 +13,12 @@
   <body>
   <h1>Calculator</h1>
   <form action="/calculator" >
-    <input required type="number" name="num1" value="${num1}">
-    <input required type="number" name="num2" value="${num2}">
-    <button type="submit" name="calculator" value="addition">Addition(+)</button>
-    <button type="submit" name="calculator" value="subtraction">Subtraction(-)</button>
-    <button type="submit" name="calculator" value="multiplication">Multiplication(*)</button>
-    <button type="submit" name="calculator" value="division">Division(/)</button>
+    <input required type="number" name="number1" value="${number1}">
+    <input required type="number" name="number2" value="${number2}">
+    <button type="submit" name="operator" value="addition">Addition(+)</button>
+    <button type="submit" name="operator" value="subtraction">Subtraction(-)</button>
+    <button type="submit" name="operator" value="multiplication">Multiplication(*)</button>
+    <button type="submit" name="operator" value="division">Division(/)</button>
   </form>
   </body>
 <h1> Result ${operator}: ${result}</h1>
