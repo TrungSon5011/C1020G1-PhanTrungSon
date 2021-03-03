@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+<body>
+<p>
+    <a th:href="@{/customer/}">Back to customer list</a>
+</p>
+<h2 th:text="${customer.name}"></h2>
+<h2 th:text="${customer.email}"></h2>
+<h2 th:text="${customer.address}"></h2>
+</body>
+</html>
