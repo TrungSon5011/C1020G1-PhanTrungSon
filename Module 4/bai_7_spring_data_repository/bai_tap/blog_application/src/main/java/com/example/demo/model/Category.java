@@ -11,6 +11,7 @@ public class Category {
     private String name;
     @OneToMany(mappedBy = "category",cascade = CascadeType.ALL)
     private List<Blog>blogs;
+
     public Category() {
     }
 

@@ -11,7 +11,20 @@ public class Blog {
     private Integer id;
     private String title;
     private String content;
+    @Column(name = "write_date",columnDefinition = "date")
+    private LocalDate writeDate;
+    @ManyToOne
+    @JoinColumn(name = "category_id",referencedColumnName = "category_id")
+    private Category category;
 
+    public Blog() {
+    }
+
+    public Blog(Integer id, String title, String content) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+    }
     public LocalDate getWriteDate() {
         return writeDate;
     }
@@ -26,21 +39,6 @@ public class Blog {
 
     public void setCategory(Category category) {
         this.category = category;
-    }
-
-    @Column(name = "write_date",columnDefinition = "date")
-    private LocalDate writeDate;
-    @ManyToOne
-    @JoinColumn(name = "category_id",referencedColumnName = "category_id")
-    private Category category;
-
-    public Blog() {
-    }
-
-    public Blog(Integer id, String title, String content) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
     }
 
     public Integer getId() {
