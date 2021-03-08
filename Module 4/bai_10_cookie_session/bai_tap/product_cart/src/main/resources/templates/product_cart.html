@@ -11,12 +11,20 @@
         <th>Product</th>
         <th>Quantity</th>
         <th>Price</th>
+        <th>Quantity</th>
         <th>Delete</th>
     </tr>
     <tr th:each="product : ${cart}">
         <td th:text="${product.key.name}"></td>
         <td th:text="${product.value}"></td>
         <td th:text="${product.value*product.key.price}"></td>
+        <td><a th:href="@{cart/{id}/quantity_form(id=${product.key.id})}">Edit Quantity</a></td>
+<!--        <td>-->
+<!--            <form th:action="@{cart/{id}/quantity(id=${product.key.id})}">-->
+<!--                <input name="quantity" type="number">-->
+<!--                <input type="submit" value="Edit">-->
+<!--            </form>-->
+<!--        </td>-->
         <td><a th:href="@{cart/{id}/delete(id=${product.key.id})}">Delete</a></td>
     </tr>
 </table>

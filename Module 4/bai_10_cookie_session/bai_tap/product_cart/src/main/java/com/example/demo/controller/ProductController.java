@@ -5,10 +5,7 @@ import com.example.demo.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 import java.util.TreeMap;
@@ -41,6 +38,7 @@ public class ProductController {
         }
         return "redirect:/";
     }
+
     @GetMapping("product/cart/{id}/delete")
     public String deleteProduct(@PathVariable Integer id,@ModelAttribute("cart") Map<Product,Integer> cart,Model model){
         cart.remove(productService.findById(id));
@@ -63,6 +61,24 @@ public class ProductController {
         model.addAttribute("cart",cart);
         return "bought";
     }
+//    http://localhost:8080/product/cart/1/quantity_form
+    @GetMapping("/product/cart/{id}/quantity_form")
+    public String editQuantityProductForm( @PathVariable Integer id, Model model ){
+        Product product = productService.findById(id);
+        model.addAttribute("product",product);
+        return "quantity_product_form";
+    }
+//    quantity
+    @PostMapping("/quantity")
+    public String editQuantityProduct(@ModelAttribute("cart") Map<Product,Integer> cart,  Product product,
+                                      @RequestParam Integer quantity ){
+        cart.replace(product,cart.get(product),quantity);
+        if(quantity < 0){
+            return "error";
+        }
+        return "redirect:/";
+
+        }
     @ModelAttribute("cart")
     public Map<Product,Integer> cart(){
         return new TreeMap<>();
