@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+<link href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="text/javascript">
+<body>
+<nav th:replace="/layout :: navbar"></nav>
+<h3>Blog</h3>
+<p >
+    <a th:href="@{/blog/create}" >Add new Blog</a>
+</p>
+<table id="blog">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>View</th>
+    </tr>
+    </thead>
+    <tbody id="tableSearch">
+    <tr th:each="row,rowStat: ${blog}" >
+        <td id="titleBlog" th:text="${row.title}"></td>
+        <td><a  th:href="@{/blog/{id}/edit(id=${row.getId()})}">edit</a></td>
+        <td><a th:href="@{/blog/{id}/delete(id=${row.getId()})}">delete</a></td>
+        <td><a th:href="@{/blog/{id}/view(id=${row.getId()})}">view</a></td>
+    </tr>
+    </tbody>
+</table>
+<button id="seeMore" >See more</button>
+    <div class="input-group" >
+        <input id="search" type="text" class="form-control rounded" placeholder="Search" aria-label="Search"
+               aria-describedby="search-addon" name="title" />
+        <!--    <button type="submit" class="btn btn-outline-primary">search</button>-->
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function (){
+        $("#search").on("keyup",function (){
+            let search = document.getElementById("search").value;
+
+            $.ajax({
+                type: "GET",
+                url: "/blog/search/" + search,
+                dataType: "json",
+                success: function (data) {
+                    console.log(data)
+                    let string = "";
+                    for (let i of data ) {
+                      string += "<tr>"+"<td>"+i.title +"</td>"+"</tr>";
+                    }
+                    $("#tableSearch").html(string);
+
+                },
+                error: function (data){
+                    console.log(data)
+                }
+            })
+        })
+    })
+
+    $("#seeMore").click(function (){
+        let result = "";
+        let page = 0;
+        // let oldHtml = $("#tableSearch").html();
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/list",
+            dataType: "json",
+            success: function (result){
+                console.log(result)
+                for(let i of result){
+                    result += "<tr>";
+                    result += "<td>" + i.title +"</td>";
+                    result += "<td>" + "</td>";
+                    result += "<td>" + "</td>";
+                    result += "</tr>";
+                }
+                $("#tableSearch").html(result);
+            }
+        })
+    })
+</script>
+
+</html>
