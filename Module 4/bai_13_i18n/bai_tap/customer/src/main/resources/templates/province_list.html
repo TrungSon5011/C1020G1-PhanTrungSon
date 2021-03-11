@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head"></head>
+<!--    <link rel="stylesheet" href="/bootstrap.min.css" type="text/css">-->
+<!--    <link rel="stylesheet" href="/bootstrap.min.js">-->
+
+<body>
+<nav th:replace="/layout :: navbar"></nav>
+<h3>Province</h3>
+<!--<h3 style="color: red" th:text="${message}"></h3>-->
+<p >
+    <a th:href="@{/province/create}" >Add new province</a>
+</p>
+<table id="products">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>View</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row,rowStat: ${provinces}">
+        <td th:text="${row.name}"></td>
+        <td><a th:href="@{/province/{id}/edit(id=${row.getId()})}">edit</a></td>
+        <td><a th:href="@{/province/{id}/delete(id=${row.getId()})}">delete</a></td>
+        <td><a th:href="@{/province/{id}/view(id=${row.getId()})}">view</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

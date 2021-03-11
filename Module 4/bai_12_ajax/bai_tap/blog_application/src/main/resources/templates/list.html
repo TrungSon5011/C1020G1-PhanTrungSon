@@ -49,7 +49,7 @@
                     console.log(data)
                     let string = "";
                     for (let i of data ) {
-                      string += "<tr>"+"<td>"+i.title +"</td>"+"</tr>";
+                      string += "<tr>"+"<td>"+ i.title +"</td>"+"</tr>";
                     }
                     $("#tableSearch").html(string);
 
@@ -60,25 +60,26 @@
             })
         })
     })
-
+    let page = 0;
     $("#seeMore").click(function (){
         let result = "";
-        let page = 0;
-        // let oldHtml = $("#tableSearch").html();
+        page ++;
         $.ajax({
             type: "GET",
             url: "http://localhost:8080/list",
+            data: {"page":page},
             dataType: "json",
             success: function (result){
                 console.log(result)
-                for(let i of result){
+                for(let i of result.content){
                     result += "<tr>";
                     result += "<td>" + i.title +"</td>";
-                    result += "<td>" + "</td>";
-                    result += "<td>" + "</td>";
+                    result += "<td><a href='/blog/"+i.id+"/edit'>Edit</a>" + "</td>";
+                    result += "<td><a href='/blog/"+i.id+"/delete'>Delete</a>" + "</td>";
+                    result += "<td><a href='/blog/"+i.id+"/view'>View</a>" + "</td>";
                     result += "</tr>";
                 }
-                $("#tableSearch").html(result);
+                $("#tableSearch").append(result);
             }
         })
     })
